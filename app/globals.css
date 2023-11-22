@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer grotesk {
+	.grotesk-book {
+		font-family: 'Vremena Grotesk';
+		font-weight: 400;
+	}
+	.grotesk-medium {
+		font-family: 'Vremena Grotesk';
+		font-weight: 500;
+	}
+	.grotesk-bold {
+		font-family: 'Vremena Grotesk';
+		font-weight: 700;
+	}
+	.grotesk-bold-italic {
+		font-family: 'Vremena Grotesk';
+		font-weight: 700;
+		font-style: italic;
+	}
+}
+
+@layer base {
+	html {
+		@apply font-grotesk;
+	}
+
+	.flex-center {
+		@apply flex flex-col items-center justify-center;
+	}
+}
+
+@keyframes skeleton-pulse {
+	0% {
+		backdrop-filter: brightness(0.9);
+	}
+
+	50% {
+		backdrop-filter: brightness(1.1);
+	}
+
+	100% {
+		backdrop-filter: brightness(0.9);
+	}
+}
+
+@layer utilities {
+	.animate-skeleton {
+		animation: skeleton-pulse 2s ease-in infinite;
+	}
+	.no-animate-skeleton {
+		backdrop-filter: brightness(0.9);
+	}
+}
