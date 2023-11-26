@@ -96,17 +96,26 @@ module.exports = {
   theme: {
     fontSize: alteredFontSize,
     fontFamily: {
-      'sans': [ '"Helvetica Neue"', '"Arial Nova"', 'Helvetica', 'Arial', 'sans-serif' ],
-      'grotesk': [ "var(--vremena-font)", '"Arial Nova"', 'Helvetica', 'Arial', 'sans-serif' ],
-      'body': [ '"Helvetica Neue"', '"Arial Nova"', 'Helvetica', 'Arial', 'sans-serif' ],
+      sans: ['"Helvetica Neue"', '"Arial Nova"', 'Helvetica', 'Arial', 'sans-serif'],
+      grotesk: ['var(--vremena-font)', '"Arial Nova"', 'Helvetica', 'Arial', 'sans-serif'],
+      body: ['"Helvetica Neue"', '"Arial Nova"', 'Helvetica', 'Arial', 'sans-serif'],
     },
     extend: {
-      colors: THEME_COLORS
+      colors: THEME_COLORS,
+      keyframes: {
+        slideDown: {
+          '0%': { opacity: 0, top: 0},
+          '100%': { opacity: 1, top: '2.5rem'},
+        },
+      },
+      animation: {
+        'slide-down': 'slideDown 0.5s ease',
+      },
     },
     container: {
       center: true,
       padding: '5vw',
-    }
+    },
   },
   plugins: [
     //require('prettier-plugin-tailwindcss'),

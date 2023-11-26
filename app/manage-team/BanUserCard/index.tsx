@@ -7,7 +7,7 @@ import { MockUser } from "../mockData";
 
 export interface BanUserCardProps {
 	user: MockUser;
-	onRemoveTeamMember: (userName: string) => void;
+	onRemoveTeamMember: (userName: string, confirmationText:string, confirmButtonText:string) => void;
 }
 
 const BanUserCard: React.FC<BanUserCardProps> = ({
@@ -26,7 +26,7 @@ const BanUserCard: React.FC<BanUserCardProps> = ({
 			<SJButton
 				iconRight={BsDoorOpenFill}
 				colorScheme={SJButtonColorScheme.RED}
-				onClick={() => onRemoveTeamMember(user.name)}
+				onClick={() => onRemoveTeamMember(user.name, `Are you sure you want to fire ${user.name}?`, 'Yes, Fire')}
 			>
 				Fire
 			</SJButton>
